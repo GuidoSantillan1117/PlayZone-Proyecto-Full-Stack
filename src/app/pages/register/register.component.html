@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100" style="font-family: 'Lato', Arial, sans-serif; ">
+    <form class="w-100" style="max-width: 1000px;">
+      <div class="bg-custom-pink-gradient text-white p-4 py-lg-5 px-lg-5" style="border-radius: 10px; box-shadow: 0 0 40px rgba(0,0,0,0.15); transition: all 0.3s ease-in-out;">
+        
+        <h2 class=" mb-5 display-5">Registro</h2>
+        
+        <div class="row">
+          <div class="col-12 col-lg-6 mb-4">
+            <label class="form-label fw-bold">NOMBRE</label>
+            <input type="text" class="form-control" name="name" placeholder="Nombre" [(ngModel)]="name" required>
+          </div>
+          <div class="col-12 col-lg-6 mb-4">
+            <label class="form-label fw-bold">APELLIDO</label>
+            <input type="text" class="form-control" name="surname" placeholder="Apellido" [(ngModel)]="surname" required>
+          </div>
+          <div class="col-12 col-lg-6 mb-4">
+            <label class="form-label fw-bold">EDAD</label>
+            <input type="number" class="form-control" name="age" placeholder="18" [(ngModel)]="age" required>
+          </div>
+          <div class="col-12 col-lg-6 mb-4">
+            <label class="form-label fw-bold">CORREO</label>
+            <input type="email" class="form-control" name="mail" placeholder="Correo" [(ngModel)]="mail" required>
+          </div>
+          <div class="col-12 col-lg-6 mb-4">
+            <label class="form-label fw-bold">CONTRASEÑA</label>
+            <input type="password" class="form-control" name="password" placeholder="*******" [(ngModel)]="password" required>
+          </div>
+          <div class="col-12 col-lg-6 mb-4">
+            <label class="form-label fw-bold">CONFIRMAR CONTRASEÑA</label>
+            <input type="password" class="form-control" name="passwordConfirm" placeholder="*******" [(ngModel)]="passwordConfirm" required>
+          </div>
+        </div>
+  
+        <div class="text-center mt-4">
+          <button type="submit" class="btn text-white bg-dark px-5 py-2" style="border-radius: 50px;">Registrarse</button>
+        </div>
+      </div>
+    </form>
+  </div>

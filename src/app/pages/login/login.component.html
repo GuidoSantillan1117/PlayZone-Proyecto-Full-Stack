@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100" style='font-family: "Lato", Arial, sans-serif;'>
+    <div  class="row shadow-lg w-100" style="max-width:1000px; border-radius: 4px;overflow: hidden;">
+
+      <div class="col-12 col-lg-6 p-5 bg-white">
+        <h2 class="display-6">Ingreso</h2>
+        <form action="#">
+          <div class="mt-4">
+            <label for="email" class="form-label fw-bold">CORREO</label>
+            <input type="email" class="form-control" name="mail" placeholder="test@gmail.com" [(ngModel)]="mail" required>
+          </div>
+          <div class="mt-4">
+            <label for="password" class="form-label fw-bold">CONTRASEÑA</label>
+            <input type="password" class="form-control" name="password" placeholder="*******" [(ngModel)]="password" required>
+          </div>
+          <div class="d-grid mt-5">
+            <button (click)="login()"type="submit" class="btn bg-custom-pink-gradient text-white">Iniciar sesión</button>
+          </div>
+          <div class="mt-5 d-block d-lg-none text-center">
+            <span>¿Aún no tienes cuenta? <a routerLink="/register">Regístrate</a></span>
+          </div>
+        </form>
+      </div>
+  
+      <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center bg-custom-pink-gradient text-white ">
+        <div class="text-center p-5">
+          <h1 class="fw-bold display-5">Bienvenido al ingreso</h1>
+          <p class="fw-bold ">¿Aún no tienes cuenta?</p>
+          <button 
+            class="btn text-white px-4 py-2 mt-3" 
+            style="border: 1px solid white; border-radius: 50px;" 
+            [routerLink]="['/register']">
+            Registrarse
+         </button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+    
+
+

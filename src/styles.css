@@ -1,0 +1,27 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+
+.bg-custom-dark {
+    background-color: #0F191E !important;
+  }
+  
+  .bg-custom-mid {
+    background-color: #071014!important;
+  }
+  .bg-custom-pink{
+    background-color: #EA0046 !important;
+  }
+  
+  .text-custom-pink {
+    color: #EA0046 !important;
+  }
+
+  .bg-custom-pink-gradient{
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    /* background: linear-gradient(135deg,  #f75959, #f35587); */
+  } 
+
+  .text-custom-pink-gradient{
+    color: linear-gradient(135deg,  #f75959, #f35587);
+  } 
