@@ -1,18 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 fixed-top">
-  <img src="favicon.png" class="img-fluid text-center" alt="Responsive image" width="60px">
-  <div class="collapse navbar-collapse justify-content-center p-3" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-dark bg-xbox-section px-3 fixed-top">
+  <img src="favicon.png" class="img-fluid " alt="Responsive image" width="60px">
+  <div class="collapse navbar-collapse justify-content-end p-3" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ">
         <li class="nav-item">
-          <a class="nav-link text-custom-pink" routerLink="/home">Home</a>
+          <a  class="nav-link text-xbox-green " routerLink="/home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-custom-pink" routerLink="/bio">¿Quién soy?</a>
+        <li class="nav-item" *ngIf="isLogged">
+          <a class="nav-link text-xbox-green" routerLink="/bio">¿Quién soy?</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-custom-pink" routerLink="/login">Acceder</a>
+        <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link text-xbox-green" routerLink="/login">Acceder</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-custom-pink" routerLink="/register">Registrarse</a>
+        <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link text-xbox-green" routerLink="/register">Registrarse</a>
+        </li>        
+        <li class="nav-item"*ngIf="isLogged">
+          <button style="border-radius: 20px;"class="btn fs-6 bg-xbox-mid-dark " (click)="logOut()"> <i class="nav-link text-xbox-green  bi-box-arrow-right  "></i></button>
         </li>
       </ul>
   </div>

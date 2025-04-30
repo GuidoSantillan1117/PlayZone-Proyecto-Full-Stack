@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navegation/navbar/navbar.component'; 
+import { O } from '@angular/cdk/keycodes';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +12,11 @@ import { NavbarComponent } from './navegation/navbar/navbar.component';
 })
 export class AppComponent {
   title = 'parcial1';
+
+  constructor(private authService: AuthService){
+
+  }
+
+
 }
+

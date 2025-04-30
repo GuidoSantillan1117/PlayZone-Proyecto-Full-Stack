@@ -2,26 +2,61 @@
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
-.bg-custom-dark {
-    background-color: #0F191E !important;
-  }
-  
-  .bg-custom-mid {
-    background-color: #071014!important;
-  }
-  .bg-custom-pink{
-    background-color: #EA0046 !important;
-  }
-  
-  .text-custom-pink {
-    color: #EA0046 !important;
-  }
+/* === Xbox Dark Theme === */
 
-  .bg-custom-pink-gradient{
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    /* background: linear-gradient(135deg,  #f75959, #f35587); */
-  } 
+/* Fondo principal muy oscuro */
 
-  .text-custom-pink-gradient{
-    color: linear-gradient(135deg,  #f75959, #f35587);
-  } 
+.bg-xbox-dark {
+  background-color: #0b0d13 !important;
+}
+
+.bg-xbox-mid-dark{
+  background-color:rgb(13 14 15);
+}
+
+/* Fondo secciones ligeramente gris oscuro */
+.bg-xbox-section {
+  background-color: #1A1A1A !important;
+}
+
+/* Fondo verde sólido (botón, acento) */
+.bg-xbox-green {
+  background-color: #107C10 !important;
+}
+
+/* Fondo verde más claro (hover o destacados) */
+.bg-xbox-green-light {
+  background-color: #13A813 !important;
+}
+
+/* Texto blanco puro */
+.text-xbox-white {
+  color: #FFFFFF !important;
+}
+
+/* Texto gris claro */
+.text-xbox-gray {
+  color: #B0B0B0 !important;
+}
+
+/* Texto verde */
+.text-xbox-green {
+  color: #107C10 !important;
+}
+
+/* === Fuente global si quieres usar Inter === */
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.snackbar{
+  background-color: white;
+  color:rgb(6, 63, 16);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.input-error{
+  border: 2px solid rgb(165, 40, 40);
+}

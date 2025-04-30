@@ -1,41 +1,50 @@
-<div class="container d-flex justify-content-center align-items-center min-vh-100" style='font-family: "Lato", Arial, sans-serif;'>
-    <div  class="row shadow-lg w-100" style="max-width:1000px; border-radius: 4px;overflow: hidden;">
-
-      <div class="col-12 col-lg-6 p-5 bg-white">
-        <h2 class="display-6">Ingreso</h2>
-        <form action="#">
-          <div class="mt-4">
-            <label for="email" class="form-label fw-bold">CORREO</label>
-            <input type="email" class="form-control" name="mail" placeholder="test@gmail.com" [(ngModel)]="mail" required>
-          </div>
-          <div class="mt-4">
-            <label for="password" class="form-label fw-bold">CONTRASEÑA</label>
-            <input type="password" class="form-control" name="password" placeholder="*******" [(ngModel)]="password" required>
-          </div>
-          <div class="d-grid mt-5">
-            <button (click)="login()"type="submit" class="btn bg-custom-pink-gradient text-white">Iniciar sesión</button>
-          </div>
-          <div class="mt-5 d-block d-lg-none text-center">
-            <span>¿Aún no tienes cuenta? <a routerLink="/register">Regístrate</a></span>
-          </div>
-        </form>
-      </div>
-  
-      <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center bg-custom-pink-gradient text-white ">
-        <div class="text-center p-5">
-          <h1 class="fw-bold display-5">Bienvenido al ingreso</h1>
-          <p class="fw-bold ">¿Aún no tienes cuenta?</p>
-          <button 
-            class="btn text-white px-4 py-2 mt-3" 
-            style="border: 1px solid white; border-radius: 50px;" 
-            [routerLink]="['/register']">
-            Registrarse
-         </button>
+<div class="container-fluid d-flex justify-content-center align-items-center min-vh-100 bg-xbox-dark font-inter shadow-lg" >
+  <div class="row w-100 shadow-sm" style="max-width: 1000px; border-radius: 10px;  overflow: hidden;" > 
+    <!-- Izquierda -->
+    <div class="col-12 col-lg-6 p-5 bg-dark text-xbox-white" >
+      <h2 class="text-center mt-4 ">Bienvenido de vuelta</h2>
+      <p class="text-center text-xbox-gray">Por favor ingrese sus credenciales</p>
+      <form class="pt-2" action="#">
+        <div class="mt-4">
+          <label class="form-label fw-bold text-xbox-gray">CORREO</label>
+          <input [ngClass]="{'input-error': !isValidMail}" type="email" class="form-control" placeholder="test@gmail.com" name="mail" [(ngModel)]="mail" required>
         </div>
+        <div class="mt-4">
+          <label class="form-label fw-bold text-xbox-gray">CONTRASEÑA</label>
+          <input [ngClass]="{'input-error': !isValidPassword}" type="password" class="form-control" placeholder="*******" name="password"[(ngModel)]="password" required>
+        </div>
+
+        <p *ngIf="!isValidMail || !isValidPassword" class="text-center text-danger mt-4 ">Formato inválido de las credenciales </p>
+
+        <div class="d-grid mt-5">
+          <button (click)="login()"type="submit" class="btn bg-xbox-green-light text-xbox-white">Iniciar sesión</button>
+        </div>
+
+      </form>
+      <div class="d-flex align-items-center mt-5">
+        <hr class="flex-grow-1">
+        <span class="mx-3 text-xbox-gray ">Acceso rápido</span>
+        <hr class="flex-grow-1">
       </div>
-  
+
+      <div class="d-flex justify-content-center pt-4">
+        <i (click)="fillCamps(0)"class="bi bi-person-circle fs-1 text-xbox-green px-2 "></i>
+        <i (click)="fillCamps(1)"class="bi bi-person-circle fs-1 text-xbox-green px-2"></i>
+        <i (click)="fillCamps(2)"class="bi bi-person-circle fs-1 text-xbox-green px-2"></i>
+
+      </div>
+
     </div>
-  </div>
     
 
+    <!-- Derecha -->
+    <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center bg-xbox-green text-xbox-white">
+      <div class="text-center p-5">
+        <h2 class="fw-bold  mb-4">¿Aún no tienes cuenta?</h2>
+        <p class="text-xbox-white">Registrate en un simple paso</p>
+        <button [routerLink]="'/register'" class="btn bg-dark text-xbox-white w-50 mt-2">Registrarse</button>
+      </div>
+    </div>
 
+  </div>
+</div>
