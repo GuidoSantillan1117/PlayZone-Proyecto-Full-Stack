@@ -1,0 +1,35 @@
+.bg-home {
+    background-image: url('/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.mesa-container {
+    background-image: url('/mesa.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+    margin-top: 20px;
+    
+  }
+
+.cartas-container{
+    height: 350px;
+}
+  
+  .carta-numero {
+    height: 150px;
+    font-weight: bold;
+    background-color: white;
+    width: 120px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid black;
+  }
+  .carta-numero h2{
+    color:red;
+    margin-left:10px;
+  }
+  

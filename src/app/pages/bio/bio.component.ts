@@ -1,5 +1,4 @@
 import { Component,OnInit } from '@angular/core';
-import { GithubService } from '../../services/github.service';
 
 @Component({
   selector: 'app-bio',
@@ -10,17 +9,13 @@ import { GithubService } from '../../services/github.service';
 })
 export class BioComponent implements OnInit{
 
-  constructor(private gitHubService:GithubService) {
+  constructor() {
   
   }
   async ngOnInit(){
 
   }
 
-
-  async getUserInfo(){
-    console.log("xd")
-  }
 
 }
 

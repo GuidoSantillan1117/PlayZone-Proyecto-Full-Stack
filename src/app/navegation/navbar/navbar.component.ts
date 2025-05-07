@@ -32,6 +32,7 @@ export class NavbarComponent {
     if(data.user != null)
     {
       const {error} = await this.supabaseAuth.signOut()
+      
       if(!error)
       {
         console.log("no hubo error")

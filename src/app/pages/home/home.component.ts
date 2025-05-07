@@ -34,18 +34,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getUserInfo();
+    this.supabaseAuth.currentUser$.subscribe(user => {
+      this.currentUser = user;
+    });
+  
   }
 
-  async getUserInfo(){
-    const {data:userData} = await this.supabaseAuth.getUser()
-    if(userData.user){
-      const {data:userInfo} = await this.dbService.searchById(userData.user.id)
-      if(userInfo)
-      {
-        this.currentUser = new User(userInfo.id,userInfo.name,userInfo.sur_name,userInfo.age,userInfo.mail); 
-      }
-    }
-  }
 
 }

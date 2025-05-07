@@ -20,6 +20,17 @@ export class DatabaseService {
     return {data,error};
   }
 
+  async insertScore(id:string|undefined,name:string,score:number,table:string)
+  {
+    const {data,error} = await this.supabaseService.supabase
+    .from(table)
+    .insert([{
+      id:id,name:name,score:score
+    }])
+    return {data,error};
+
+  }
+
   async searchById(id:string){
     const {data} = await this.supabaseService.supabase
     .from('users')
@@ -28,5 +39,23 @@ export class DatabaseService {
     .single();
 
     return{data}
+  }
+
+  async traerMensajes()
+  {
+    const {data} = await this.supabaseService.supabase
+    .from("mensajes")
+    .select("id,mensaje,created_at,users(name)")
+
+    return data
+  }
+
+  async guardarMensaje(mensaje:string,userId:string)
+  {
+    const {data} = await this.supabaseService.supabase.
+    from("mensajes")
+    .insert({
+      mensaje:mensaje, user_id : userId,
+    })
   }
 }

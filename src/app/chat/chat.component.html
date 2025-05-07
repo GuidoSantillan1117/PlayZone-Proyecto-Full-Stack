@@ -1,0 +1,21 @@
+<div class="chat-container">
+    <div class="chat-mensajes">
+        @for (m of mensajes(); track m.id) {
+            <div [class.mi-mensaje]="m.user_id === currentUser!.id" [class.otro-mensaje]="m.user_id !== currentUser!.id">
+              <p><strong>{{ m.users.name }}</strong>: {{ m.mensaje }}</p>
+              <small>{{ m.created_at | date:'short' }}</small>
+            </div>
+          }
+  
+    <div class="chat-input">
+      <input
+        type="text"
+        name="mensaje"
+        [(ngModel)]="mensaje"
+        required
+        placeholder="Escribí tu mensaje..."
+      />
+      <button (click)="enviarMensaje()">Enviar</button>
+    </div>
+  </div>
+  
