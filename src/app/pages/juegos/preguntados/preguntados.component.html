@@ -12,7 +12,7 @@
       </div>
       <div class="row g-4 justify-content-center my-5">
         <div class="col-md-6 col-lg-5" *ngFor="let respuesta of logicaJuego.respuestasActuales">
-          <button class="btn bg-game-buttons respuesta-btn w-100 py-3 fs-5" 
+          <button class="bg-game-buttons respuesta-btn w-100 py-3 fs-5" 
                   (click)="logicaJuego.verificarRespuesta(respuesta)" 
                   [disabled]="respuesta.elegida">
             {{ respuesta.valor }}
