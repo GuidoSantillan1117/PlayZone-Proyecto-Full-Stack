@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { SupabaseService } from './supabase.service';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { User } from '../clases/User'; // tu clase User
+import { User } from '../clases/User'; 
 
 @Injectable({
   providedIn: 'root'
@@ -51,8 +51,6 @@ export class AuthService {
         this.loadUserFromSession();
       } else {
         this._isLoggedIn.next(false);
-        this.currentUserSubject.next(null);
-        this.router.navigateByUrl("/home")
       }
     });
   }

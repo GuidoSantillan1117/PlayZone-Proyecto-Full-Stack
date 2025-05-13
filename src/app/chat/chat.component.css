@@ -18,16 +18,34 @@
     padding: 10px;
     overflow-y: auto;
     font-size: 14px;
+    display: flex;
+    flex-direction: column;
   }
 
   .mi-mensaje {
-    margin-bottom: 0px;
+    background-color: rgb(66, 209, 66);
+    /* rgb(87, 218, 87); */
+    border-radius: 20px;
+    max-width: 70%;
+    align-self: flex-end;
+    margin-bottom: 10px;
     padding-right: 20px;
     text-align: right;
+
+  }
+  .mi-mensaje p{
+    margin: 0px;
   }
 
   .otro-mensaje{
+    color:white;
+    background-color: #212529;
+    width: 100%;
     text-align: left;
+    max-width: 70%;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding-left: 10px;
   }
   
   .chat-mensajes p {
@@ -44,7 +62,7 @@
     flex: 1;
     padding: 10px;
     border: none;
-    font-size: 14px;
+    font-size: 18px;
     outline: none;
   }
   

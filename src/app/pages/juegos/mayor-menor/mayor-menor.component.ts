@@ -37,12 +37,16 @@ export class MayorMenorComponent implements OnInit{
   
     const user : User | null = this.supabaseAuth.getCurrentUser()
     console.log(user)
-    const {data,error} = await this.dbService.insertScore(user!.id,user!.name,this.logica.jugador.score,"mayor_menor")
+    if(this.logica.jugador.aciertos >0)
+    {
+       await this.dbService.insertarAciertos(user!.id,this.logica.jugador.aciertos,"mayor_menor")
+    }
   
     const dialogRef = this.dialog.open(JuegosDialogComponent, {
       disableClose: true
     });
-    dialogRef.componentInstance.scoreJugador = this.logica.jugador.score;
+    dialogRef.componentInstance.correctas = this.logica.jugador.aciertos;
+    dialogRef.componentInstance.juego = "mayor-menor";
 
   
     dialogRef.afterClosed().subscribe(resultado => {

@@ -28,8 +28,8 @@ export class Logica{
 
 
     constructor() {
-        this.bot = new Bot()
-        this.jugador = new Jugador()
+        this.bot = new Bot();
+        this.jugador = new Jugador();
         this.agregarLetras();
         this.seleccionarTematica()
         this.seleccionarPalabra();
@@ -54,7 +54,6 @@ export class Logica{
                 const index = this.getRandomInt(element.palabras.length)
                 this.palabra = element.palabras[index]
                 element.palabras.splice(index, 1)
-                // agregar que si la tematica este vacia se genere de nuevo
                 break
             
             }

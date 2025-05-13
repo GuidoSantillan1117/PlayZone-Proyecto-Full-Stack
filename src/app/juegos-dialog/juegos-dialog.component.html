@@ -1,8 +1,11 @@
-<h2 class="text-center text-"mat-dialog-title>¡Perdiste!</h2>
-<mat-dialog-content>
-    Has hecho {{scoreJugador}} puntos  ¿Qué te gustaría hacer?
-  </mat-dialog-content>
-  <mat-dialog-actions align="end">
-    <button class="btn bg-success rounded " mat-button (click)="salir()">Salir</button>
-    <button class="btn bg-danger rounded" mat-raised-button color="primary" (click)="reintentar()">Reintentar</button>
-  </mat-dialog-actions>
+<div class="container bg-dark" >
+  <h2 class="text-center text-warning"mat-dialog-title>¡Perdiste!</h2>
+  <mat-dialog-content class="text-white " >
+     {{mensajeFinal}}
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button class="btn bg-danger rounded " mat-button (click)="salir()">Salir</button>
+      <button class="btn bg-success rounded" mat-raised-button color="primary" (click)="reintentar()">Reintentar</button>
+    </mat-dialog-actions>
+
+</div>

@@ -6,6 +6,8 @@
     width: 100%;
 }
 
-.li-not-show{
-    display: none;
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:active {
+  color: white !important;
 }

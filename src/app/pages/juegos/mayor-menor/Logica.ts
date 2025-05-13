@@ -44,7 +44,7 @@ export class Logica{
               }, 3000)
         }
         else if ((operacion === "mayor" && jugadorValor > botValor) || (operacion === "menor" && jugadorValor < botValor)) {
-            this.jugador.score += 50;
+            this.jugador.aciertos ++
             this.acerto = true;
             
             setTimeout(() => {
@@ -76,7 +76,7 @@ export class Logica{
         if(perdio)
         {
             this.bot.mostrar = false;
-            this.jugador.score = 0;
+            this.jugador.aciertos = 0;
         }
 
     }

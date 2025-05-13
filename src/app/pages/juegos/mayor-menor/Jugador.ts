@@ -1,13 +1,13 @@
 export class Jugador{
     valor:number;
     eleccion:string;
-    score:number;
+    aciertos:number
 
     constructor()
     {
         this.valor = 0;
         this.eleccion = ""
-        this.score = 0;
+        this.aciertos = 0;
 
     }
     

@@ -2,10 +2,10 @@
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
-/* === Xbox Dark Theme === */
 
-/* Fondo principal muy oscuro */
-
+.bg-main-color{
+    background: #0b0d13;
+}
 .bg-xbox-dark {
   background-color: #0b0d13 !important;
 }
@@ -14,39 +14,38 @@
   background-color:rgb(13 14 15);
 }
 
-/* Fondo secciones ligeramente gris oscuro */
 .bg-xbox-section {
   background-color: #1A1A1A !important;
 }
-
-/* Fondo verde sólido (botón, acento) */
 .bg-xbox-green {
   background-color: #107C10 !important;
 }
 
-/* Fondo verde más claro (hover o destacados) */
 .bg-xbox-green-light {
   background-color: #13A813 !important;
 }
 
-/* Texto blanco puro */
 .text-xbox-white {
   color: #FFFFFF !important;
 }
 
-/* Texto gris claro */
 .text-xbox-gray {
   color: #B0B0B0 !important;
 }
 
-/* Texto verde */
 .text-xbox-green {
   color: #107C10 !important;
 }
 
-/* === Fuente global si quieres usar Inter === */
 .font-inter {
   font-family: 'Inter', sans-serif;
+}
+
+.bg-game-buttons{
+    background-color: rgb(91, 104, 124);
+}
+.bg-game-section{
+    background-color: rgb(34, 56, 80);
 }
 
 .snackbar{

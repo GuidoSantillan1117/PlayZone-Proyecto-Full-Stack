@@ -33,13 +33,17 @@ export class AhorcadoComponent implements OnInit {
    async mostrarDialog() {
     
       const user : User | null = this.supabaseAuth.getCurrentUser()
-      console.log(user)
-      const {data,error} = await this.dbService.insertScore(user!.id,user!.name,this.logica.jugador.score,"ahorcado")
+      if (this.logica.jugador.score>0)
+      {
+
+        await this.dbService.insertarPuntuacion(user!.id,this.logica.jugador.score,"ahorcado")
+      }
     
       const dialogRef = this.dialog.open(JuegosDialogComponent, {
         disableClose: true
       });
       dialogRef.componentInstance.scoreJugador = this.logica.jugador.score;
+            dialogRef.componentInstance.juego = "ahorcado";
   
       dialogRef.afterClosed().subscribe(resultado => {
         if (resultado === 'salir') {

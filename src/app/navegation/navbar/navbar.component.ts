@@ -31,12 +31,9 @@ export class NavbarComponent {
     const {data} = await this.supabaseService.supabase.auth.getUser()
     if(data.user != null)
     {
+      this.router.navigateByUrl("/home")
       const {error} = await this.supabaseAuth.signOut()
-      
-      if(!error)
-      {
-        console.log("no hubo error")
-      }
+    
     }
   }
 

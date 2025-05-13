@@ -15,7 +15,8 @@ import { Subscription } from 'rxjs';
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.css'
 })
-export class ChatComponent implements OnInit, OnDestroy {
+export class ChatComponent implements OnInit {
+  boton = false;
   mensaje : string = "";
   currentUser: User | null = null;
   private userSub!: Subscription;
@@ -52,6 +53,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.userSub = this.supaBaseAuth.currentUser$.subscribe(user => {
       this.currentUser = user;
     });
+    console.log(this.currentUser)
 
   }
 
@@ -59,13 +61,14 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.userSub.unsubscribe();
   }
   async cargarMensajes() {
+    this.boton = true;
     const data = await this.dbService.traerMensajes();
     this.mensajes.set(data);
   }
 
   async enviarMensaje ()
   {
-
+    console.log(this.currentUser)
     this.dbService.guardarMensaje(this.mensaje,this.currentUser!.id);
     this.mensaje = ""; 
   }

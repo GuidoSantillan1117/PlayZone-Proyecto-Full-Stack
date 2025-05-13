@@ -1,13 +1,26 @@
 <div class="chat-container">
+    <div class="text-center" style="border-bottom: 1px solid #ccc;">
+      <h4>Chat General</h4>
+    </div>
     <div class="chat-mensajes">
         @for (m of mensajes(); track m.id) {
             <div [class.mi-mensaje]="m.user_id === currentUser!.id" [class.otro-mensaje]="m.user_id !== currentUser!.id">
-              <p><strong>{{ m.users.name }}</strong>: {{ m.mensaje }}</p>
-              <small>{{ m.created_at | date:'short' }}</small>
+              @if(m.user_id === currentUser!.id)
+              {
+                <p style="text-align: left;margin-left: 10px;margin-top: 10px;"><strong>Tú</strong></p> 
+                <p style="text-align: left;margin-left: 10px; font-weight: 400;">{{ m.mensaje }}</p>
+                <p style="text-align: left;margin-left: 10px;color:rgb(90, 88, 88)" ><small>{{ m.created_at | date:'short' }}</small></p>
+                
+              }
+              @else{
+                <p style="margin-top: 10px; font-size: 16px;"><strong>{{m.users.name}}</strong></p> 
+                <p style="font-weight: 400;" >{{ m.mensaje }}</p>
+                <p style="color:rgb(109, 109, 180)"><small>{{ m.created_at | date:'short' }}</small></p>
+              }
             </div>
           }
-  
-    <div class="chat-input">
+    </div>
+    <div class="chat-input ">
       <input
         type="text"
         name="mensaje"
@@ -17,5 +30,4 @@
       />
       <button (click)="enviarMensaje()">Enviar</button>
     </div>
-  </div>
   

@@ -1,0 +1,51 @@
+.bg-home {
+    background-image: url('/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.main{
+    height: 100vh;
+}
+
+.casillero{
+    background-color: rgb(91, 104, 124);
+    height: 150px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+}
+
+.presionado{
+    background-color: rgb(34, 56, 80);
+}
+.bottom-div {
+  background-color: rgb(11, 15, 22);
+  border-radius: 20px;
+  padding: 16px 24px;
+}
+
+.vidas img {
+  
+  margin-right: 6px;
+}
+
+.score h4, .nivel h4 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.score strong, .nivel strong {
+  font-size: 24px;
+}
+
+.facil-text{
+    color:rgb(33, 163, 98);
+}
+.medio-text{
+    color:yellow
+}
+.dificil-text{
+    color:red;
+}

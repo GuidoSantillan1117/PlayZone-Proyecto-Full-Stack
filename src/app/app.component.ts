@@ -23,12 +23,14 @@ export class AppComponent {
 
 
   title = 'parcial1';
-  httpService = inject(HttpService);
 
   constructor(private supabaseAuth: AuthService){
     this.authSub = this.supabaseAuth.isLoggedIn$.subscribe(logged =>{
       this.isLogged = logged
-      console.log(this.isLogged)
+      if(!this.isLogged)
+      {
+        this.chatAbierto =false;
+      }
     })
   }
 

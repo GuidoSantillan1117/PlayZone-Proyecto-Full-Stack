@@ -1,36 +1,38 @@
 <div class="container-fluid bg-home main py-5 min-vh-100 d-flex align-items-center">
-    <div style="border-radius: 20px;" class="container bg-dark py-4">
-      <div class="row w-100 p-4 bg-dark g-0">
-        <div class="col-12 bg-xbox-section">
-          <h2 style="margin-right: 20px;" class="text-white text-end my-4 ">Score: {{ logica.jugador.score }}</h2>
-          <h2 class="text-center"
+  <div style="border-radius: 20px;" class="container bg-dark py-4">
+    <div class="row w-100 p-4 bg-dark g-0">
+      <div class="col-12 bg-xbox-section">
+        <h2 class="text-center my-4"
           [ngClass]="{
             'text-danger': logica.fallo,
             'text-success': logica.acerto,
             'text-white': !logica.fallo && !logica.acerto
-          }"
-          >  {{ logica.fallo ? 'Fallaste' : (logica.acerto ? '¡Correcto, has acertado!' : (logica.empato ? 'Empate' : '')) }}
-
+          }">
+          {{ logica.fallo ? 'Fallaste' : (logica.acerto ? '¡Correcto, has acertado!' : (logica.empato ? 'Empate' : '')) }}
         </h2>
-          <div class="mesa-container d-flex flex-column justify-content-center align-items-center">
-            <div class="carta-numero"> 
-                <h2 *ngIf="logica.bot.mostrar">{{ logica.bot.valor }} </h2>
-            </div>
+        <div class="mesa-container d-flex flex-column justify-content-center align-items-center">
+          <div class="carta-numero"> 
+            <h2 *ngIf="logica.bot.mostrar">{{ logica.bot.valor }} </h2>
+          </div>
+        </div>
+
+        <div class="cartas-container position-relative d-flex flex-column justify-content-center align-items-center bg-xbox-mid-dark p-4 rounded">
+          
+          <div class="position-absolute top-0 end-0 mt-2 me-3">
+            <h4 class="text-success m-0">Aciertos: {{ logica.jugador.aciertos }}</h4>
+          </div>
+          <h1 class="text-white">Tu carta</h1>
+          <div class="carta-numero mt-3">
+            <h2>{{ logica.jugador.valor }}</h2>
           </div>
 
-          <div class="cartas-container d-flex flex-column justify-content-center align-items-center bg-xbox-mid-dark">
-            <h1>Tu carta</h1>
-            <div class="carta-numero mt-3">
-                <h2>{{logica.jugador.valor}}</h2>
-            </div>
-            <div class="text-center mt-3">
-                <button [disabled]="logica.bot.mostrar" (click)="logica.verificarNumero('mayor')" class="btn bg-danger mx-2 fs-4 text-white">Mayor</button>
-                <button [disabled]="logica.bot.mostrar" (click)="logica.verificarNumero('menor')" class="btn bg-danger mx-2 fs-4 text-white">Menor</button>
-              </div>
+          <div class="text-center mt-3">
+            <button [disabled]="logica.bot.mostrar" (click)="logica.verificarNumero('mayor')" class="btn bg-danger mx-2 fs-4 text-white">Mayor</button>
+            <button [disabled]="logica.bot.mostrar" (click)="logica.verificarNumero('menor')" class="btn bg-danger mx-2 fs-4 text-white">Menor</button>
           </div>
-  
         </div>
+
       </div>
     </div>
   </div>
-  
+</div>

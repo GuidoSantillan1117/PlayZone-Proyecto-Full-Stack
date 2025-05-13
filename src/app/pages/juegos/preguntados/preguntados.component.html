@@ -1,0 +1,29 @@
+<div class="container-fluid bg-home main py-5 min-vh-100 d-flex align-items-center justify-content-center">
+  <div class="container bg-xbox-section p-4 text-white rounded shadow-lg" style="min-height: 600px; max-width: 1200px;">
+    <div class="p-4 bg-dark rounded position-relative" style="min-height:80%">
+      
+      <div class="text-center py-4 mb-4">
+        <img src="/preguntados-logo.png" width="200px" style="border-radius: 100px;">
+      </div>
+
+
+      <div class="text-center my-5">
+        <h1 class="display-6 fw-bold">{{ logicaJuego.pregunta }}</h1>
+      </div>
+      <div class="row g-4 justify-content-center my-5">
+        <div class="col-md-6 col-lg-5" *ngFor="let respuesta of logicaJuego.respuestasActuales">
+          <button class="btn bg-game-buttons respuesta-btn w-100 py-3 fs-5" 
+                  (click)="logicaJuego.verificarRespuesta(respuesta)" 
+                  [disabled]="respuesta.elegida">
+            {{ respuesta.valor }}
+          </button>
+        </div>
+      </div>
+
+      <div class="position-absolute end-0 bottom-0 p-3">
+        <h5 class="m-0 text-success fw-semibold">✔ Correctas: {{ logicaJuego.respuestasCorrectas }}</h5>
+      </div>
+
+    </div>
+  </div>
+</div>

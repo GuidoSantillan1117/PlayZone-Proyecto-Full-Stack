@@ -20,15 +20,44 @@ export class DatabaseService {
     return {data,error};
   }
 
-  async insertScore(id:string|undefined,name:string,score:number,table:string)
+  async insertarPuntuacion(id:string|undefined,score:number,table:string)
   {
     const {data,error} = await this.supabaseService.supabase
     .from(table)
     .insert([{
-      id:id,name:name,score:score
+      id:id,score:score
     }])
     return {data,error};
+  }
 
+  async insertarAciertos(id:string|undefined,aciertos:number,table:string)
+  {
+    const {data,error} = await this.supabaseService.supabase
+    .from(table)
+    .insert([{
+      id:id,correctas:aciertos
+    }])
+    return {data,error};
+  }
+
+  async traerPuntuacion(table:string)
+  {
+    const {data} = await this.supabaseService.supabase
+    .from(table)
+    .select("id,id_user,score,users(name)")
+    .order("score",{ascending:false})
+
+    return data
+  }
+
+  async traerAciertos(table:string)
+  {
+    const {data} = await this.supabaseService.supabase
+    .from(table)
+    .select("id,id_user,correctas,users(name)")
+     .order("correctas",{ascending:false})
+
+    return data
   }
 
   async searchById(id:string){
@@ -45,7 +74,8 @@ export class DatabaseService {
   {
     const {data} = await this.supabaseService.supabase
     .from("mensajes")
-    .select("id,mensaje,created_at,users(name)")
+    .select("id,user_id,mensaje,created_at,users(name)")
+    .order("created_at",{ascending:true})
 
     return data
   }
@@ -57,5 +87,15 @@ export class DatabaseService {
     .insert({
       mensaje:mensaje, user_id : userId,
     })
+  }
+
+  async traerRanking(table:string)
+  {
+     const {data} = await this.supabaseService.supabase.
+     from(table).
+     select("id_user,id,score,dificultad,users(name)")
+     .order('score',{ascending: false});
+     return {data};
+
   }
 }

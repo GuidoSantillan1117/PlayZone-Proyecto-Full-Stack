@@ -13,11 +13,27 @@ import { MatButtonModule } from '@angular/material/button';
 
 })
 export class JuegosDialogComponent {
-
+  public juego = "";
   public scoreJugador :number = 0;
+  public correctas : number = 0;
   constructor(private dialogRef: MatDialogRef<JuegosDialogComponent>) {
 
   }
+
+  get mensajeFinal(): string {
+  switch (this.juego) {
+    case 'preguntados':
+      return `Has respondido ${this.correctas} preguntas correctamente.¿Qué te gustaría hacer?`;
+    case 'mayor-menor':
+      return `Has acertado ${this.correctas} veces. ¿Qué te gustaría hacer?`;
+    case 'bombit':
+      return `Has hecho ${this.scoreJugador} puntos. ¿Qué te gustaría hacer?`;
+    case 'ahorcado':
+      return `Has hecho ${this.scoreJugador} puntos. ¿Qué te gustaría hacer?`;
+    default:
+      return `¿Qué te gustaría hacer?`;
+  }
+}
 
   salir() {
     this.dialogRef.close('salir');

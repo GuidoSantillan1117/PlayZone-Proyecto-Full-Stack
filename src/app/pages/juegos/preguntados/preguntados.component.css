@@ -1,0 +1,34 @@
+.bg-home {
+    background-image: url('/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.main{
+    height: 100vh;
+}
+
+
+.respuesta-btn {
+  color: white;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  border-radius: 12px;
+}
+
+.respuesta-btn:hover {
+  background-color: #4CAF50;
+  border-color: #81c784;
+  transform: scale(1.02);
+  color: #fff;
+}
+
+.respuesta-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.text-xbox-green {
+  color: #7CFC00;
+}
