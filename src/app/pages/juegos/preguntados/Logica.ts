@@ -59,7 +59,6 @@ export class Logica{
         }
 
         else{
-            console.log("Xd")
             this.perdio$.next()
         }
     }

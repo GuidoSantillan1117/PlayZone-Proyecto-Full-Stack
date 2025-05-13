@@ -53,7 +53,6 @@ export class ChatComponent implements OnInit {
     this.userSub = this.supaBaseAuth.currentUser$.subscribe(user => {
       this.currentUser = user;
     });
-    console.log(this.currentUser)
 
   }
 
@@ -68,8 +67,11 @@ export class ChatComponent implements OnInit {
 
   async enviarMensaje ()
   {
-    console.log(this.currentUser)
-    this.dbService.guardarMensaje(this.mensaje,this.currentUser!.id);
-    this.mensaje = ""; 
+    if(this.mensaje.length>0)
+    {
+      this.dbService.guardarMensaje(this.mensaje,this.currentUser!.id);
+      this.mensaje = ""; 
+
+    }
   }
 }
