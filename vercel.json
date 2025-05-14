@@ -1,6 +1,0 @@
-{
-  "outputDirectory": "dist/parcial1",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
